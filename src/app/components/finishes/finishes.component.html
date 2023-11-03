@@ -1,0 +1,41 @@
+<section id="hero" class="hero">
+    <img [src]=" globalService.S3BucketUrl + globalService.banners?.finishes?.banner_finishes_top " id="bgvideo">
+    <app-mobile-reg-btn></app-mobile-reg-btn>
+ </section>
+ <main id="main">
+    <section id="get-started" class="get-started " data-aos="zoom-in">
+       <div class="container">
+          <div class="row justify-content-between gy-4">
+             <div class="col-lg-12 ">
+                <p class="m-auto top-text"> {{ globalService.languageLabels?.finishes_page_top_text }}
+                </p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started " data-aos="zoom-in">
+       <div class="container">
+          <div class="row  gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid" [src]=" globalService.S3BucketUrl + globalService.banners?.finishes?.image_finishes_bathtub_sink_kohler ">
+                <p class="mt-2 color_black">{{ globalService.languageLabels?.finishes_page_part1_text }}</p>
+             </div>
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid" [src]=" globalService.S3BucketUrl + globalService.banners?.finishes?.image_finishes_quartz_counter_tops ">
+                <p class="mt-2 color_black">{{ globalService.languageLabels?.finishes_page_part2_text }}</p>
+             </div>
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid" [src]=" globalService.S3BucketUrl + globalService.banners?.finishes?.image_finishes_high_quality_marbels ">
+                <p class="mt-2 color_black">{{ globalService.languageLabels?.finishes_page_part3_text }}</p>
+             </div>
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid mb-2 mt-1" [src]=" globalService.S3BucketUrl + globalService.banners?.finishes?.image_finishes_doors_and_wardrobes ">
+                <p class="mt-2 color_black">{{ globalService.languageLabels?.finishes_page_part4_text }}</p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <app-page-menu></app-page-menu>
+    <app-register-form></app-register-form>
+ </main>
+ 

@@ -1,0 +1,196 @@
+<!-- <section id="hero" class="hero">
+    <img [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.banner_smart_living_top" id="bgvideo">
+    <app-mobile-reg-btn></app-mobile-reg-btn>
+ </section> -->
+ <section id="hero" class="hero player-wrapper video-container" *ngIf="!globalService.loading">
+   <video playsinline [muted]="true" [autoplay]="true" [loop]="true" id="bgvideo" [volume]="0.2" *ngIf="globalService.languageLabels.smart_living_banner_video_url">
+      <source [src]="globalService.S3BucketUrl + globalService.languageLabels?.smart_living_banner_video_url" type="video/mp4">
+   </video>
+   <div class="video_overlay" (click)="playPause()"></div>
+   <div class="play_holder"><img class="playpause-btn" (click)="playPause()"
+         src="assets/media/img/{{playStatus ? 'pause' : 'play'}}.svg"></div>
+   <img class="mute-btn" src="assets/media/img/{{soundStatus ? 'un' : ''}}mute.svg" (click)="changeMute()">
+   <app-mobile-reg-btn></app-mobile-reg-btn>
+</section>
+ <!-- End Hero Section -->
+ <main id="main" class="smartlive">
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="get-started" data-aos="zoom-in">
+       <div class="container">
+          <div class="row justify-content-between gy-4">
+             <div class="col-lg-12">
+                <p class="m-auto top-text"> {{ globalService.languageLabels?.tower_page_top_text }}
+                </p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <!-- End Get Started Section -->
+    <section class="get-started bg-light-black" data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_modern_access_control_security">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4>{{ globalService.languageLabels?.smart_living_page_modern_access_control_security_title }}</h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_modern_access_control_security_text }}
+                </p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started" data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_pandemic_safe_touchless_system">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4>{{ globalService.languageLabels?.smart_living_page_pandemic_safe_touchless_system_title }}</h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_pandemic_safe_touchless_system_text }}</p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started bg-light-black" data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_smart_video_building_intercom_system">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4>{{ globalService.languageLabels?.smart_living_page_smart_video_building_intercom_system_title }}</h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_smart_video_building_intercom_system_text }}
+                </p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started" data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_hybrid_destination_control_system_by_kone">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4>{{ globalService.languageLabels?.smart_living_page_hybrid_destination_control_system_by_kone_title }}</h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_hybrid_destination_control_system_by_kone_text }}</p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started bg-light-black" data-aos="zoom-in">
+      <div class="container top-text">
+         <div class="row align-items-center gy-4">
+            <div class="col-lg-6 mb-3">
+               <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_smart_video_doorbell_by_legrand">
+            </div>
+            <div class="col-lg-6 mb-3">
+               <h4>{{ globalService.languageLabels?.smart_living_page_smart_video_doorbell_by_legrand_title }}</h4>
+               <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_smart_video_doorbell_by_legrand_text }}
+               </p>
+            </div>
+         </div>
+      </div>
+   </section>
+    <section class="get-started " data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_ev_charging_enabled_parking">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4>{{ globalService.languageLabels?.smart_living_page_ev_charging_enabled_parking_title }}</h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_ev_charging_enabled_parking_text }}
+                </p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started bg-light-black" data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_wifi_facility">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4>{{ globalService.languageLabels?.smart_living_page_wifi_facility_title }}</h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_wifi_facility_text }}</p>
+             </div>
+          </div>
+       </div>
+    </section>
+   
+    <section class="get-started " data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_smart_thermostat_by_legrand">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4>{{ globalService.languageLabels?.smart_living_page_smart_thermostat_by_legrand_title }}</h4>
+                <p class="mt-2 color_black">{{ globalService.languageLabels?.smart_living_page_smart_thermostat_by_legrand_text }}
+                </p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started bg-light-black" data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_adaptable_mood_lighting_in_apartments">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4> {{ globalService.languageLabels?.smart_living_page_adaptable_mood_lighting_in_apartments_title }}</h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_adaptable_mood_lighting_in_apartments_text }}
+                </p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started" data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_smart_parking_access ">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4> {{ globalService.languageLabels?.smart_living_page_smart_parking_access_title }}</h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_smart_parking_access_text }}
+                </p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started bg-light-black" data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_bgm_system">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4>{{ globalService.languageLabels?.smart_living_page_bgm_system_title }} </h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_bgm_system_text }}</p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section class="get-started" data-aos="zoom-in">
+       <div class="container top-text">
+          <div class="row align-items-center gy-4">
+             <div class="col-lg-6 mb-3">
+                <img class="img-fluid max-height-200" [src]=" globalService.S3BucketUrl + globalService.banners?.smart_living?.image_smart_living_smart_home_provision_ready ">
+             </div>
+             <div class="col-lg-6 mb-3">
+                <h4>{{ globalService.languageLabels?.smart_living_page_smart_home_provision_ready_title }}</h4>
+                <p class="mt-2 color_black"> {{ globalService.languageLabels?.smart_living_page_smart_home_provision_ready_text }}</p>
+             </div>
+          </div>
+       </div>
+    </section>
+    <app-page-menu></app-page-menu>
+    <app-register-form></app-register-form>
+ </main>
+ 

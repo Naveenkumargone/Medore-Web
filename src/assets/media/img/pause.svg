@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        opacity: 0.5;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Pause" transform="translate(20546 -2489)">
+    <rect id="Rectangle_846" data-name="Rectangle 846" class="cls-1" width="512" height="512" transform="translate(-20546 2489)"/>
+    <g id="Group_2374" data-name="Group 2374" transform="translate(6 -377)">
+      <circle id="Ellipse_34" data-name="Ellipse 34" class="cls-2" cx="250" cy="250" r="250" transform="translate(-20546 2872)"/>
+      <g id="Group_2368" data-name="Group 2368" transform="translate(-20359.68 3017.791)">
+        <g id="Group_2362" data-name="Group 2362" transform="translate(0 0)">
+          <g id="Group_2368-2" data-name="Group 2368" transform="translate(0 0)">
+            <g id="Group_2369" data-name="Group 2369" transform="translate(0 0)">
+              <g id="Group_2368-3" data-name="Group 2368" transform="translate(0 0)">
+                <rect id="Rectangle_844" data-name="Rectangle 844" class="cls-3" width="34.736" height="208.417" rx="12.5"/>
+                <rect id="Rectangle_845" data-name="Rectangle 845" class="cls-3" width="34.736" height="208.417" rx="12.5" transform="translate(92.626)"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

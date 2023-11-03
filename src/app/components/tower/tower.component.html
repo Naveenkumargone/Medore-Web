@@ -1,0 +1,203 @@
+<section id="hero" class="hero">
+    <img [src]=" globalService.S3BucketUrl + globalService.banners?.the_tower?.banner_towers_top" id="bgvideo">
+    <app-mobile-reg-btn></app-mobile-reg-btn>
+</section>
+<!-- End Hero Section -->
+<main id="main">
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="get-started" data-aos="zoom-in">
+        <div class="container">
+            <div class="row justify-content-between gy-4">
+                <div class="col-lg-12">
+                    <p class="m-auto top-text text-center">{{ globalService.languageLabels?.tower_page_top_text }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Get Started Section -->
+    <section class="tower pb-0" data-aos="zoom-in"
+        [style.background-image]="'url(' + globalService.S3BucketUrl +  globalService.banners?.the_tower?.banner_tower_below_topbanner_background  +')'"
+        [style.background-size]="'60% 100%'" (mouseenter)="showSkyBG()" (mouseleave)="hideSkyBG()"
+        [ngClass]="skyBgHovered ? 'tower-hover':''">
+        <div>
+            <img class="img-fluid"
+                [src]="globalService.S3BucketUrl + globalService.banners?.the_tower?.banner_tower_below_topbanner">
+        </div>
+    </section>
+
+    <section id="get-started" class="get-started" data-aos="zoom-in">
+        <div class="container">
+            <div class="row justify-content-between gy-4">
+                <div class="col-lg-12">
+                    <p class="m-auto top-text text-center"> {{ globalService.languageLabels?.tower_page_sky_bg_area_text
+                        }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Get Started Section -->
+    <section id="get-started" class="get-started" data-aos="zoom-in">
+        <div class="container">
+            <div class="row justify-content-between gy-4">
+                <div class="col-lg-4">
+                    <img class="img-fluid"
+                        [src]=" globalService.S3BucketUrl + globalService.banners?.the_tower?.tower_banner_medore_left">
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid"
+                        [src]=" globalService.S3BucketUrl + globalService.banners?.the_tower?.tower_banner_medore_center">
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid"
+                        [src]=" globalService.S3BucketUrl + globalService.banners?.the_tower?.tower_banner_medore_right">
+                </div>
+                <!-- <div class="col-lg-12 py-4 f18 text-center">
+                    <p class="top-text m-auto">{{ globalService.languageLabels?.tower_page_state_of_the_art_text }}</p>
+                </div> -->
+            </div>
+
+        </div>
+    </section>
+    <section id="constructions" class="bg-light-black pt-3 pb-3">
+        <div class="container">
+            <div class="row pb-3 pt-3 bb-1 mt-3 mb-3 d-lg-none d-md-none align-items-center">
+                <div class="col-lg-4 col-6 br-1">
+                    <div class="apartment_feature"> {{ globalService.languageLabels?.tower_page_state_of_the_art_text }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                    <div class="apartment_feature"> {{ globalService.languageLabels?.tower_page_lifestyle_amenities_text
+                        }}</div>
+                </div>
+                <div class="col-lg-4 col-6 br-1">
+                    <div class="apartment_feature"> {{ globalService.languageLabels?.tower_page_unitized_system_text }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                    <div class="apartment_feature"> {{ globalService.languageLabels?.tower_page_high_tech_effects_text
+                        }} </div>
+                </div>
+                <div class="col-lg-4 col-6 br-1">
+                    <div class="apartment_feature"> {{
+                        globalService.languageLabels?.tower_page_pre_eminent_building_text }} </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                    <div class="apartment_feature"> {{
+                        globalService.languageLabels?.tower_page_centralised_lpg_system_text }} </div>
+                </div>
+                <div class="col-lg-12"></div>
+            </div>
+            <div class="row pb-3 pt-3 bb-1 mt-3 mb-3 d-lg-flex d-none">
+                <div class="col-lg-4 col-6 br-1">
+                    <div class="apartment_feature">
+                        {{ globalService.languageLabels?.tower_page_state_of_the_art_text }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-6 br-1">
+                    <div class="apartment_feature"> {{ globalService.languageLabels?.tower_page_lifestyle_amenities_text
+                        }}</div>
+                </div>
+                <div class="col-lg-4 col-6">
+                    <div class="apartment_feature"> {{ globalService.languageLabels?.tower_page_unitized_system_text }}
+                    </div>
+                </div>
+                <div class="col-lg-12"></div>
+            </div>
+            <div class="row pb-3 pt-3 mt-3 mb-3 d-lg-flex d-none">
+                <div class="col-lg-4  br-1">
+                    <div class="apartment_feature"> {{ globalService.languageLabels?.tower_page_high_tech_effects_text
+                        }} </div>
+                </div>
+                <div class="col-lg-4 br-1">
+                    <div class="apartment_feature"> {{
+                        globalService.languageLabels?.tower_page_pre_eminent_building_text }} </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="apartment_feature"> {{
+                        globalService.languageLabels?.tower_page_centralised_lpg_system_text }}
+                    </div>
+                </div>
+                <div class="col-lg-12"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="constructions" class="pb-0" *ngIf="globalService.carousels?.tower?.length > 0">
+        <div class="container">
+            <h1 class="color_black pb-3">{{
+                globalService.languageLabels[globalService.carousels?.tower[0].carousel_title]}}</h1>
+        </div>
+        <div class="slider">
+            <ngx-slick-carousel class="carousel" id="mainEntranceSlick" #mainEntranceSlick="slick-carousel"
+                [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let slide of globalService.carousels?.tower[0].images; let i = index"
+                    class="slide">
+                    <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+                </div>
+            </ngx-slick-carousel>
+        </div>
+        <div class="pre-nav-button py-2 mb-4">
+            <p class="m-auto py-2 top-text">{{
+                globalService.languageLabels[globalService.carousels?.tower[0]?.carousel_content]}}
+            </p>
+            <img class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+                (click)="gotoPrevious('mainEntranceSlick')" *ngIf="globalService.carousels?.tower[0].images.length > 1">
+            <img class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+                (click)="gotoNext('mainEntranceSlick')" *ngIf="globalService.carousels?.tower[0].images.length > 1">
+        </div>
+    </section>
+    <section id="constructions" class="pt-0 pb-0" *ngIf="globalService.carousels?.tower?.length > 0">
+        <div class="container">
+            <h1 class="color_black pb-3">{{
+                globalService.languageLabels[globalService.carousels?.tower[1]?.carousel_title]}}</h1>
+        </div>
+        <div class="slider">
+            <ngx-slick-carousel class="carousel" id="mainLobbySlick" #mainLobbySlick="slick-carousel"
+                [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let slide of globalService.carousels?.tower[1].images; let i = index"
+                    class="slide">
+                    <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+                </div>
+            </ngx-slick-carousel>
+        </div>
+        <div class="pre-nav-button py-2 mb-4" *ngIf="globalService.carousels?.tower?.length > 0">
+            <p class="m-auto py-2 top-text">{{
+                globalService.languageLabels[globalService.carousels?.tower[1]?.carousel_content]}}
+            </p>
+            <img class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+                (click)="gotoPrevious('mainLobbySlick')" *ngIf="globalService.carousels?.tower[1].images.length > 1">
+            <img class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+                (click)="gotoNext('mainLobbySlick')" *ngIf="globalService.carousels?.tower[1].images.length > 1">
+        </div>
+    </section>
+    <section id="constructions" class="pt-0 pb-0">
+        <div class="container">
+            <h1 class="color_black pb-3" *ngIf="globalService.carousels?.tower?.length > 0">{{
+                globalService.languageLabels[globalService.carousels?.tower[2]?.carousel_title]}}</h1>
+        </div>
+        <div class="slider" *ngIf="globalService.carousels?.tower?.length > 0">
+            <ngx-slick-carousel class="carousel" id="liftLobbySlick" #liftLobbySlick="slick-carousel"
+                [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let slide of globalService.carousels?.tower[2].images; let i = index"
+                    class="slide">
+                    <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+                </div>
+            </ngx-slick-carousel>
+        </div>
+        <div class="pre-nav-button py-2 pb-4" *ngIf="globalService.carousels?.tower?.length > 0">
+            <p class="m-auto py-2 top-text">{{
+                globalService.languageLabels[globalService.carousels?.tower[2]?.carousel_content]}}
+            </p>
+            <img class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+                (click)="gotoPrevious('liftLobbySlick')" *ngIf="globalService.carousels?.tower[2].images.length > 1">
+            <img class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+                (click)="gotoNext('liftLobbySlick')" *ngIf="globalService.carousels?.tower[2].images.length > 1">
+        </div>
+    </section>
+    <app-page-menu></app-page-menu>
+    <app-register-form></app-register-form>
+</main>

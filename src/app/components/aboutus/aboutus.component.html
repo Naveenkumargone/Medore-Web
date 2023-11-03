@@ -1,0 +1,30 @@
+<section id="hero" class="hero">
+    <img [src]=" globalService.S3BucketUrl + globalService.banners?.about_us?.banner_about_us_top " id="bgvideo">
+    <app-mobile-reg-btn></app-mobile-reg-btn>
+</section>
+<section id="alt-services" class="alt-services pt-5 pb-0">
+    <div class="container" data-aos="fade-up">
+        <div class="row text-center">
+            <h1 class="color_black title_text"><img src="assets/media/img/medore_part_logo.png" class="img-fluid m-auto about-logo"> EXECUTIVE TEAM </h1>
+        </div>
+
+    </div>
+</section>
+<section id="services" class=" pt-2">
+    <div class="container" data-aos="fade-up">
+       
+        <div class="row">
+            <div class="col-12 text-center"><img class="img-fluid ceo" [src]="globalService.S3BucketUrl + ceo?.avatar">
+                <h6 class="executive-title mt-2 mb-0">{{ ceo?.name}}</h6>
+                <p class="executive-role">{{ ceo?.role }}</p>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-3 col-md-3 text-center" *ngFor="let item of executives; let i = index;">
+                <div class="exe-img" [ngStyle]="{'background': 'url(' + globalService.S3BucketUrl + item.avatar  + ')'}">&nbsp;</div>
+                <h6 class="executive-small-title mb-0 ">{{ item?.name }}</h6>
+                <p class="">{{ item?.role }}</p>
+            </div>
+        </div>
+    </div>
+</section>

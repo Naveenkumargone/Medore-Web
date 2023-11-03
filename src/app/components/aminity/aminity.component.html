@@ -1,0 +1,238 @@
+<section id="hero" class="hero">
+   <img [src]=" globalService.S3BucketUrl + globalService.banners?.amenities?.banner_amenities_top " id="bgvideo">
+</section>
+<main id="main">
+   <section id="get-started" class="get-started " data-aos="zoom-in">
+      <div class="container">
+         <div class="row justify-content-between gy-4">
+            <div class="col-lg-12 ">
+               <p class="m-auto top-text"> {{ globalService.languageLabels?.amenities_page_top_text }}</p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <div class="page-sliders" *ngIf="globalService.carousels?.amenities?.length > 0">
+      <section class="pt-0 pb-0">
+         <div class="container">
+            <h2 class="color_black pb-3">{{
+               globalService.languageLabels[globalService.carousels?.amenities[0].carousel_title]}}</h2>
+         </div>
+         <div class="slider">
+            <ngx-slick-carousel class="carousel" id="golfSlick" #golfSlick="slick-carousel"
+               [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+               (beforeChange)="beforeChange($event)">
+               <div ngxSlickItem *ngFor="let slide of globalService.carousels?.amenities[0].images;let i = index"
+                  class="slide">
+                  <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+               </div>
+            </ngx-slick-carousel>
+         </div>
+         <div class="pre-nav-button py-2 mb-4">
+            <p class="m-auto py-2 top-text">{{
+               globalService.languageLabels[globalService.carousels?.amenities[0].carousel_content] }}</p>
+            <img id="golf-l" class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+               (click)="gotoPrevious('golfSlick')" *ngIf="globalService.carousels?.amenities[0].images.length> 1">
+            <img id="golf-r" class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+               (click)="gotoNext('golfSlick')" *ngIf="globalService.carousels?.amenities[0].images.length> 1">
+         </div>
+      </section>
+      <section class="pt-0 pb-0">
+         <div class="container">
+            <h2 class="color_black pb-3">{{
+               globalService.languageLabels[globalService.carousels?.amenities[1].carousel_title]}}</h2>
+         </div>
+         <div class="slider">
+            <ngx-slick-carousel class="carousel" id="swimmingPoolSlick" #swimmingPoolSlick="slick-carousel"
+               [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+               (beforeChange)="beforeChange($event)">
+               <div ngxSlickItem *ngFor="let slide of globalService.carousels?.amenities[1]. images; let i = index"
+                  class="slide">
+                  <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+               </div>
+            </ngx-slick-carousel>
+         </div>
+         <div class="pre-nav-button py-2 pb-4">
+            <p class="m-auto py-2 top-text">{{
+               globalService.languageLabels[globalService.carousels?.amenities[1].carousel_content] }}</p>
+            <img id="swimming-l" class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+               (click)="gotoPrevious('swimmingPoolSlick')"
+               *ngIf="globalService.carousels?.amenities[1].images.length> 1">
+            <img id="swimming-r" class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+               (click)="gotoNext('swimmingPoolSlick')" *ngIf="globalService.carousels?.amenities[1].images.length> 1">
+         </div>
+      </section>
+      <section class="pt-0 pb-0">
+         <div class="container">
+            <h2 class="color_black pb-3">{{
+               globalService.languageLabels[globalService.carousels?.amenities[2].carousel_title]}}</h2>
+         </div>
+         <div class="slider">
+            <ngx-slick-carousel class="carousel" id="billiardsSlick" #billiardsSlick="slick-carousel"
+               [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+               (beforeChange)="beforeChange($event)">
+               <div ngxSlickItem *ngFor="let slide of globalService.carousels?.amenities[2]. images; let i = index"
+                  class="slide">
+                  <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+               </div>
+            </ngx-slick-carousel>
+         </div>
+         <div class="pre-nav-button py-2 mb-4">
+            <p class="m-auto py-2 top-text">{{
+               globalService.languageLabels[globalService.carousels?.amenities[2].carousel_content] }}</p>
+            <img id="swimming-l" class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+               (click)="gotoPrevious('billiardsSlick')" *ngIf="globalService.carousels?.amenities[2].images.length> 1">
+            <img id="swimming-r" class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+               (click)="gotoNext('billiardsSlick')" *ngIf="globalService.carousels?.amenities[2].images.length> 1">
+         </div>
+      </section>
+      <section class="pt-0 pb-0">
+         <div class="container">
+            <h2 class="color_black pb-3">{{
+               globalService.languageLabels[globalService.carousels?.amenities[3].carousel_title]}}</h2>
+         </div>
+         <div class="slider">
+            <ngx-slick-carousel class="carousel" id="tableTennisSlick" #tableTennisSlick="slick-carousel"
+               [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+               (beforeChange)="beforeChange($event)">
+               <div ngxSlickItem *ngFor="let slide of globalService.carousels?.amenities[3]. images; let i = index"
+                  class="slide">
+                  <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+               </div>
+            </ngx-slick-carousel>
+         </div>
+         <div class="pre-nav-button py-2 mb-4">
+            <p class="m-auto py-2 top-text">{{
+               globalService.languageLabels[globalService.carousels?.amenities[3].carousel_content] }}</p>
+            <img class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+               (click)="gotoPrevious('tableTennisSlick')"
+               *ngIf="globalService.carousels?.amenities[3].images.length> 1">
+            <img class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+               (click)="gotoNext('tableTennisSlick')" *ngIf="globalService.carousels?.amenities[3].images.length> 1">
+         </div>
+      </section>
+      <section class="pt-0 pb-0">
+         <div class="container">
+            <h2 class="color_black pb-3">{{
+               globalService.languageLabels[globalService.carousels?.amenities[4].carousel_title]}}</h2>
+         </div>
+         <div class="slider">
+            <ngx-slick-carousel class="carousel" id="gymSlick" #gymSlick="slick-carousel"
+               [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+               (beforeChange)="beforeChange($event)">
+               <div ngxSlickItem *ngFor="let slide of globalService.carousels?.amenities[4]. images; let i = index"
+                  class="slide">
+                  <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+               </div>
+            </ngx-slick-carousel>
+         </div>
+         <div class="pre-nav-button py-2 mb-4">
+            <p class="m-auto py-2 top-text">{{
+               globalService.languageLabels[globalService.carousels?.amenities[4].carousel_content] }}</p>
+            <img class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+               (click)="gotoPrevious('gymSlick')" *ngIf="globalService.carousels?.amenities[4].images.length> 1">
+            <img class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png" (click)="gotoNext('gymSlick')"
+               *ngIf="globalService.carousels?.amenities[4].images.length> 1">
+         </div>
+      </section>
+      <section class="pt-0 pb-0">
+         <div class="container">
+            <h2 class="color_black pb-3">{{
+               globalService.languageLabels[globalService.carousels?.amenities[5].carousel_title]}}</h2>
+         </div>
+         <div class="slider">
+            <ngx-slick-carousel class="carousel" id="yogaSlick" #yogaSlick="slick-carousel"
+               [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+               (beforeChange)="beforeChange($event)">
+               <div ngxSlickItem *ngFor="let slide of globalService.carousels?.amenities[5]. images; let i = index"
+                  class="slide">
+                  <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+               </div>
+            </ngx-slick-carousel>
+         </div>
+         <div class="pre-nav-button py-2 mb-4">
+            <p class="m-auto py-2 top-text">{{
+               globalService.languageLabels[globalService.carousels?.amenities[5].carousel_content] }}</p>
+            <img class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+               (click)="gotoPrevious('yogaSlick')" *ngIf="globalService.carousels?.amenities[5].images.length> 1">
+            <img class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png" (click)="gotoNext('yogaSlick')"
+               *ngIf="globalService.carousels?.amenities[5].images.length> 1">
+         </div>
+      </section>
+      <section class="pt-0 pb-0">
+         <div class="container">
+            <h2 class="color_black pb-3">{{
+               globalService.languageLabels[globalService.carousels?.amenities[6].carousel_title]}}</h2>
+         </div>
+         <div class="slider">
+            <ngx-slick-carousel class="carousel" id="steamSlick" #steamSlick="slick-carousel"
+               [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+               (beforeChange)="beforeChange($event)">
+               <div ngxSlickItem *ngFor="let slide of globalService.carousels?.amenities[6]. images; let i = index"
+                  class="slide">
+                  <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+               </div>
+            </ngx-slick-carousel>
+         </div>
+         <div class="pre-nav-button py-2 mb-4">
+            <p class="m-auto py-2 top-text">{{
+               globalService.languageLabels[globalService.carousels?.amenities[6].carousel_content] }}</p>
+            <img class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+               (click)="gotoPrevious('steamSlick')" *ngIf="globalService.carousels?.amenities[6].images.length > 1">
+            <img class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+               (click)="gotoNext('steamSlick')" *ngIf="globalService.carousels?.amenities[6].images.length > 1">
+         </div>
+      </section>
+      <section class="pt-0 pb-0">
+         <div class="container">
+            <h2 class="color_black pb-3">{{
+               globalService.languageLabels[globalService.carousels?.amenities[7].carousel_title]}}</h2>
+         </div>
+         <div class="slider">
+            <ngx-slick-carousel class="carousel" id="saunaSlick" #saunaSlick="slick-carousel"
+               [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+               (beforeChange)="beforeChange($event)">
+               <div ngxSlickItem *ngFor="let slide of globalService.carousels?.amenities[7]. images; let i = index"
+                  class="slide">
+                  <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+               </div>
+            </ngx-slick-carousel>
+         </div>
+         <div class="pre-nav-button py-2 mb-4">
+            <p class="m-auto py-2 top-text">{{
+               globalService.languageLabels[globalService.carousels?.amenities[7].carousel_content] }}</p>
+            <img class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+               (click)="gotoPrevious('saunaSlick')" *ngIf="globalService.carousels?.amenities[7].images.length > 1">
+            <img class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+               (click)="gotoNext('saunaSlick')" *ngIf="globalService.carousels?.amenities[7].images.length > 1">
+         </div>
+      </section>
+      <section class="pt-0 pb-0">
+         <div class="container">
+            <h2 class="color_black pb-3">{{
+               globalService.languageLabels[globalService.carousels?.amenities[8].carousel_title]}}</h2>
+         </div>
+         <div class="slider">
+            <ngx-slick-carousel class="carousel" id="multiPurposeHallSlick" #multiPurposeHallSlick="slick-carousel"
+               [config]="globalService.slickSlideConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+               (beforeChange)="beforeChange($event)">
+               <div ngxSlickItem *ngFor="let slide of globalService.carousels?.amenities[8].images; let i = index"
+                  class="slide">
+                  <img src="{{ globalService.S3BucketUrl + slide }}" alt="" width="100%">
+               </div>
+            </ngx-slick-carousel>
+         </div>
+         <div class="pre-nav-button py-2 mb-4">
+            <p class="m-auto py-2 top-text">{{
+               globalService.languageLabels[globalService.carousels?.amenities[8].carousel_content] }}</p>
+            <img class="arrow-slide arrow-right-c" src="assets/media/img/arrow_left.png"
+               (click)="gotoPrevious('multiPurposeHallSlick')"
+               *ngIf="globalService.carousels?.amenities[8].images.length > 1">
+            <img class="arrow-slide arrow-left-c" src="assets/media/img/arrow_right.png"
+               (click)="gotoNext('multiPurposeHallSlick')"
+               *ngIf="globalService.carousels?.amenities[8].images.length > 1">
+         </div>
+      </section>
+   </div>
+   <app-page-menu></app-page-menu>
+   <app-register-form></app-register-form>
+</main>

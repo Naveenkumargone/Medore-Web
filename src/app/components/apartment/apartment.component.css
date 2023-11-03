@@ -1,0 +1,71 @@
+.bannerletters-1 {
+    font-family: 'Glacial Indifference Bold';
+    font-size: 2rem;
+    margin-bottom: 1.5em;
+}
+
+.bannerletters-2 {
+    /* font-family: 'Glacial Indifference Bold'; */
+    font-family: 'Breathing Personal Use';
+    font-size: 3rem;
+    margin-bottom: 1.5em;
+}
+
+.bannerletters-3 {
+    /* font-family: 'Glacial Indifference Bold'; */
+    font-family: 'Glacial Indifference Regular';
+    font-size: 2rem;
+    margin-bottom: 1.5em;
+}
+
+.hero {
+    position: relative;
+}
+
+@media (min-width: 625px) and (max-width: 1024px) {
+
+    .bannerletters-1,
+    .bannerletters-2,
+    .bannerletters-3 {
+        font-size: 3vw;
+        margin-bottom: 1em;
+    }
+
+    .banner-text {
+        padding-top: 2%;
+        height: auto;
+        width: 40%;
+    }
+}
+
+@media (min-width: 520px) and (max-width: 624px) {
+
+    .bannerletters-1,
+    .bannerletters-2,
+    .bannerletters-3 {
+        font-size: 1rem;
+        margin-bottom: 1em;
+    }
+
+    .banner-text {
+        height: auto;
+        width: 40%;
+        padding-top: 4%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 519px) {
+
+    .bannerletters-1,
+    .bannerletters-2,
+    .bannerletters-3 {
+        font-size: 3vw;
+        margin-bottom: 1em;
+    }
+
+    .banner-text {
+        height: auto;
+        width: 40%;
+        padding-top: 4%;
+    }
+}

@@ -1,0 +1,60 @@
+import { Injectable } from '@angular/core';
+import { NgxSpinnerService } from "ngx-spinner";
+import { NotifierService } from "angular-notifier";
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from "@angular/router";
+import { environment } from "../../environments/environment";
+import { ModalDismissReasons, NgbModal, NgbModalRef, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+
+@Injectable({
+	providedIn: 'root'
+})
+export class CommonService {
+	apiBase: any;
+	currentUrl: string = '';
+	previousUrl: string = '';
+	isMobile: boolean = false;
+	isItemEdit: boolean = false;
+	imgBase: string = environment.ImageUrl;
+	userData: any = {};
+	pageLimits: any = environment.pageLimits;
+	modalReference: any = NgbModalRef;
+	formData: any;
+	ismenuShown: boolean = false;
+	application_types: any = environment.application_types;
+
+	constructor(private spinner: NgxSpinnerService, private notifier: NotifierService, private cookieService: CookieService, public router: Router) { }
+
+	showLoader() {
+		this.spinner.show();
+	}
+
+	hideLoader() {
+		this.spinner.hide();
+	}
+
+	toggleMobMenu(){
+		this.ismenuShown = !this.ismenuShown;
+	}
+
+	showNotification(type: string, message: string) {
+		this.notifier.notify(type, message);
+	}
+
+	logout() {
+		if (typeof window !== 'undefined') {
+			this.cookieService.delete('pinkberry_header_token');
+		    localStorage.removeItem('pinkberry_header_token');
+		    this.cookieService.delete('pinkberry_logged_user_role');
+		    localStorage.removeItem('pinkberry_logged_user_role');
+		    this.router.navigate(['/login']);
+		}
+	}
+
+	generateDocNo(num: string, size: number) {
+		let newnum = num.toString();
+		while (newnum.length < size) newnum = "0" + newnum;
+		return newnum;
+	}
+
+}

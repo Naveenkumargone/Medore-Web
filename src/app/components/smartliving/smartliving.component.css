@@ -1,0 +1,90 @@
+
+@keyframes leftRight {
+	40% {
+		transform: translate(50px, 0) scale(.7);
+		opacity: 1;
+	}
+
+	60% {}
+
+	80% {
+		transform: translate(0) scale(2);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate(0) scale(1);
+		opacity: 1;
+	}
+}
+
+.player-wrapper {
+	position: relative;
+}
+
+.video_overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+
+.play_holder {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.playpause-btn {
+	color: #fff;
+	width: 4vw;
+	cursor: pointer;
+	visibility: hidden;
+	z-index: 110;
+	opacity: 0.5;
+	max-width: 70px;
+}
+
+.player-wrapper:hover .playpause-btn {
+	visibility: visible !important;
+}
+
+.mute-btn {
+	position: absolute;
+	bottom: 2vh;
+	right: 2vh;
+	color: #fff;
+	width: 20vh;
+	cursor: pointer;
+	z-index: 110;
+}
+
+.playpause-btn {
+	color: #fff;
+	width: 4vw;
+	cursor: pointer;
+	visibility: hidden;
+	z-index: 110;
+	opacity: 0.5;
+	max-width: 70px;
+}
+
+@media (min-width: 768px) {
+	.player-wrapper {
+		height: 100vh;
+	}
+
+	#bgvideo {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		object-fit: fill;
+	}
+}

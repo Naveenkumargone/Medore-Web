@@ -1,0 +1,29 @@
+<section id="services" class="pagemenu-services  bg-light-black">
+    <div class="col-12 text-center">
+       <h1 class="color_black mb-5">{{ globalService.languageLabels.discover_more_label }}</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-1"> &nbsp;</div>
+            <div class="col-lg-11">
+            <div class=" vertical slider">
+                <ngx-slick-carousel class="carousel" id="menuSlick" #menuSlick [config]="globalService.pageMenuslickConfig" (init)="slickInit($event)" (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                    <ng-container *ngFor="let slide of globalService.pageMenus; let i = index" >
+                        <div ngxSlickItem class="slide-item d-flex flex-column justify-content-center text-center img-bg p-0" [routerLink]=" '/'+ globalService.activeLanguageInfo.short_lable + slide.link" *ngIf="!globalService.currentUrl.includes(slide?.link)">
+                            <div class="img-menu" [ngStyle]="{background: 'url('+ globalService.S3BucketUrl + slide.icon + ')'}">
+                            <img src="{{  globalService.S3BucketUrl + slide.icon }}" alt="" width="100%" class="pagemenu-img">
+                            <div class="page-menu-text">{{ globalService.languageLabels[slide.menu_title] }}</div>
+                            <div class="overlay-menu"></div>
+                            </div>
+                        </div>
+                    </ng-container> 
+                </ngx-slick-carousel>
+                <div class="pre-menu-button py-2 mb-4">
+                    <div class="arrow-slide-div arrow-right-div" (click)="gotoNextmenu()">&nbsp;</div>
+                    <div class="arrow-slide-div arrow-left-div" (click)="gotoPreviousmenu()">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+ 
