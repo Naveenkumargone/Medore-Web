@@ -1,0 +1,14 @@
+.form-rhs{
+    background-color: #0006;
+    padding: 40px;
+}
+@media(max-width:991px){
+    .lhs-banner{
+        min-height: 50px !important;
+    }
+}
+@media(max-width:640px){
+    .lhs-banner{
+        min-height: 0px !important;
+    }
+}

@@ -3,23 +3,15 @@ import { GlobalService } from "../../../services/global.service";
 import { WebService } from '../../../services/web.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-landing-header',
+  templateUrl: './landing-header.component.html',
+  styleUrls: ['./landing-header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  currenturl: any;
-  constructor(private router: Router, public globalService: GlobalService, public webService: WebService, private renderer: Renderer2, 
-    private location: Location) {
-    
-    
-  }
-  ngOnInit(): void {
-    this.currenturl = this.location.path().split('/')[2];
-    console.log('=========header', this.currenturl);
+export class LandingHeaderComponent {
+  constructor(private router: Router, public globalService: GlobalService, public webService: WebService, private renderer: Renderer2) {
   }
 
   changeLanguage(language: any){

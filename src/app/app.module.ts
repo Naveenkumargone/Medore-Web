@@ -28,6 +28,10 @@ import { Page404Component } from './components/page404/page404.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BlogComponent } from './components/blog/blog.component';
+import { LandingPageComponent } from './components/blocks/landing-page/landing-page.component';
+import { LandingHeaderComponent } from './components/blocks/landing-header/landing-header.component';
+
+
 
 @NgModule({
   declarations: [
@@ -47,7 +51,9 @@ import { BlogComponent } from './components/blog/blog.component';
     PrivacyPolicyComponent,
     Page404Component,
     AboutusComponent,
-    BlogComponent
+    BlogComponent,
+    LandingPageComponent,
+    LandingHeaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

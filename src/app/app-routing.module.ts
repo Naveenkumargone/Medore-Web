@@ -12,6 +12,8 @@ import { TowerComponent } from './components/tower/tower.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { Page404Component } from './components/page404/page404.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { LandingPageComponent } from './components/blocks/landing-page/landing-page.component';
+import { LandingHeaderComponent } from './components/blocks/landing-header/landing-header.component';
 
 const routes: Routes = [
   { 
@@ -63,6 +65,14 @@ const routes: Routes = [
     path: ':language/blog', component: BlogComponent, data: {
       title: 'Blogs Page'
     }
+  },
+  {
+    path: ':language/landing-pg',
+    component: LandingPageComponent
+  },
+  {
+    path: ':language/landing-pg-header',
+    component: LandingHeaderComponent
   },
   { 
     path: 'page/404', component: Page404Component, data: { 

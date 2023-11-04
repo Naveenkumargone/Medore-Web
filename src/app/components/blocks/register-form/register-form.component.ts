@@ -5,6 +5,7 @@ import { WebService } from '../../../services/web.service';
 import { GlobalService } from '../../../services/global.service';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -30,11 +31,16 @@ export class RegisterFormComponent {
     iama: ""
   };
   isRegistered: boolean = false;
-  constructor(public formBuilder: FormBuilder, public webService: WebService, public globalService: GlobalService,  @Inject(DOCUMENT) private document: Document) {
+  currentUrl: any;
+  constructor(public formBuilder: FormBuilder, public webService: WebService, public globalService: GlobalService,  
+    @Inject(DOCUMENT) private document: Document, private router: Router) {
 
   }
 
   ngOnInit() {
+    this.currentUrl = this.router.url.split('/')[2];
+    console.log('...............', this.currentUrl);
+    
     if (typeof window !== 'undefined') {
       localStorage.removeItem('medore_registration_status');
       if ((localStorage.getItem('medore_registration_status') != '') && (localStorage.getItem('medore_registration_status') != null)) {

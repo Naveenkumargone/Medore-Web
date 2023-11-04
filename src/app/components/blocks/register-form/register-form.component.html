@@ -1,4 +1,4 @@
-<section #contact id="contact" class="contaxt pt-0">
+<section #contact id="contact" class="contaxt pt-0" *ngIf="currentUrl !== 'landing-pg'">
    <video playsinline [autoplay]="true" [muted]="true" [loop]="true" id="bgcontact" *ngIf="globalService.languageLabels.register_form_banner_video_url">
       <source [src]="globalService.S3BucketUrl + globalService.languageLabels?.register_form_banner_video_url" type="video/mp4">
    </video>
@@ -103,6 +103,124 @@
                      <div class="col-12">
                         <button type="submit" class="transbt">{{globalService.languageLabels?.register_form_enquire_button_label}}</button>
                         <a [ngClass]="!isRegistered ? 'p-3 ps-0' : ''" [ngbTooltip]="!isRegistered ? 'Please register for downloading Brochure' : ''"><button class="transbt" type="button" [ngClass]="globalService.activeLanguage == 'ar' ? 'me-3':'ms-3'" [disabled]="!isRegistered" (click)="downloadFile('assets/media/pdf/MEDORE-Brochure.pdf')">{{globalService.languageLabels?.register_form_download_brouchure_button_label}}</button></a>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section #contact id="contact" class="contaxt pt-0" *ngIf="currentUrl === 'landing-pg'">
+   <video playsinline [autoplay]="true" [muted]="true" [loop]="true" id="bgcontact" *ngIf="globalService.languageLabels.register_form_banner_video_url">
+      <source [src]="globalService.S3BucketUrl + globalService.languageLabels?.register_form_banner_video_url" type="video/mp4">
+   </video>
+   <div class="container reg-pad pt-5" data-aos="fade-up">
+      <div class="col-12">
+         <div class="row ">
+            <div class="col-lg-6 d-flex flex-column justify-content-center text-center img-bg regtext lhs-banner"
+               data-aos="zoom-in" data-aos-delay="100">
+               <!-- {{globalService.languageLabels?.register_your_interest_label}} -->
+               
+            </div>
+            <div class="col-lg-6 form-rhs" data-aos="zoom-in" data-aos-delay="100">
+               <form class="mt-4 mt-md-0" [formGroup]="interestForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group mb-5">
+                     <small class="float-end blinking"
+                        *ngIf="interestForm.controls['name'].invalid && formSubmitted">{{ globalService.languageLabels?.register_form_field_name_error_msg }}</small>
+                     <input class="form-control" type="text" [placeholder]="globalService.languageLabels?.register_form_field_name_label" formControlName="name"
+                        [(ngModel)]="formData.name" />
+                  </div>
+                  <div class="form-group mb-5">
+                     <small class="float-end blinking"
+                        *ngIf="interestForm.controls['email'].invalid && formSubmitted"> {{ globalService.languageLabels?.register_form_field_email_error_msg }}</small>
+                     <input class="form-control" type="text" [placeholder]="globalService.languageLabels?.register_form_field_email_label" formControlName="email"
+                        [(ngModel)]="formData.email" />
+                  </div>
+                  <div class="form-group mb-5">
+                     <small class="float-end blinking"
+                        *ngIf="interestForm.controls['phone'].invalid && formSubmitted">{{ globalService.languageLabels?.register_form_field_phone_error_msg }}</small>
+                     <input class="form-control" type="text" [placeholder]="globalService.languageLabels?.register_form_field_phone_label" formControlName="phone"
+                        [(ngModel)]="formData.phone" />
+                  </div>
+                  <div class="form-group mb-5">
+                     <small class="float-end blinking"
+                        *ngIf="interestForm.controls['interest'].invalid && formSubmitted">{{ globalService.languageLabels?.register_form_field_interest_error_msg }}</small>
+                        {{globalService.languageLabels?.register_form_field_iam_interested_in_label}}
+                  </div>
+                  <div class="col-12">
+                     <div class="row">
+                        <div class="col-4 mb-4">
+                           <label>
+                              <input class="check" type="radio" value="Studio"
+                              formControlName="interest" [(ngModel)]="formData.interest">
+                              <span>{{globalService.languageLabels?.register_form_field_checkbox_value_studio}}</span>
+                           </label>
+                        </div>
+                        <div class="col-4 mb-4">
+                           <label>
+                              <input class="check" id="Bedroom1" type="radio" value="1 Bedroom"
+                                 formControlName="interest" [(ngModel)]="formData.interest">
+                              <span>{{globalService.languageLabels?.register_form_field_checkbox_value_1_bedroom}}</span>
+                           </label>
+                        </div>
+                        <div class="col-4 mb-4">
+                           <label>
+                              <input class="check" id="Bedroom2" type="radio" value="2 Bedroom"
+                                 formControlName="interest" [(ngModel)]="formData.interest">
+                              <span>{{globalService.languageLabels?.register_form_field_checkbox_value_2_bedroom}}</span>
+                           </label>
+                        </div>
+                        <div class="col-4 mb-4">
+                           <label>
+                              <input class="check" id="Bedroom3" type="radio" value="3 Bedroom"
+                                 formControlName="interest" [(ngModel)]="formData.interest">
+                              <span>{{globalService.languageLabels?.register_form_field_checkbox_value_3_bedroom}}</span>
+                           </label>
+                        </div>
+                        <!-- <div class="col-8 mb-4">
+                           <label>
+                              <input class="check" id="Bedroom4" type="radio" value="4 Bedroom Penthouse"
+                                 formControlName="interest" [(ngModel)]="formData.interest">
+                              <span>4 Bedroom Penthouse</span>
+                           </label>
+                        </div> -->
+                     </div>
+                     <div class="form-group mb-5">
+                        <small class="float-end blinking"
+                           *ngIf="interestForm.controls['iama'].invalid && formSubmitted">{{ globalService.languageLabels?.register_form_field_iama_error_msg }}</small>
+                           {{globalService.languageLabels?.register_form_field_i_am_a_label}}
+                     </div>
+                     <div class="row">
+                        <div class="col-4 mb-4">
+                           <label>
+                              <input class="check" type="radio" value="Broker" id="Broker"
+                              formControlName="iama" [(ngModel)]="formData.iama">
+                              <span>{{globalService.languageLabels?.register_form_field_checkbox_value_broker}}</span>
+                           </label>
+                        </div>
+                        <div class="col-4 mb-4">
+                           <label>
+                              <input class="check" id="Buyer" type="radio" value="Investor"
+                                 formControlName="iama" [(ngModel)]="formData.iama">
+                              <span>{{globalService.languageLabels?.register_form_field_checkbox_value_investor }}</span>
+                           </label>
+                        </div>
+                        <div class="col-4 mb-4">
+                           <label>
+                              <input class="check" id="Buyer" type="radio" value="End User"
+                                 formControlName="iama" [(ngModel)]="formData.iama">
+                              <span>{{globalService.languageLabels?.register_form_field_checkbox_value_end_user}}</span>
+                           </label>
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <!-- {{globalService.languageLabels?.register_form_enquire_button_label}} -->
+                        <button type="submit" class="transbt">REGISTER YOUR INTEREST</button>
+                        <!-- <a [ngClass]="!isRegistered ? 'p-3 ps-0' : ''" [ngbTooltip]="!isRegistered ? 'Please register for downloading Brochure' : ''">
+                           <button class="transbt" type="button" [ngClass]="globalService.activeLanguage == 'ar' ? 'me-3':'ms-3'" [disabled]="!isRegistered" (click)="downloadFile('assets/media/pdf/MEDORE-Brochure.pdf')">{{globalService.languageLabels?.register_form_download_brouchure_button_label}}</button>
+                        </a> -->
                      </div>
                   </div>
                </form>
