@@ -1,33 +1,29 @@
 import { Component, HostListener, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { GlobalService } from "../../../services/global.service";
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements OnInit, OnChanges {
+export class FooterComponent implements OnInit {
   currenturl: any;
   toggle_landing: boolean = false;
   constructor(public globalService: GlobalService, private location:Location, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.currenturl = this.location.path().split('/')[2];
-    if (this.currenturl == 'landing-pg'){
-      this.toggle_landing = true;
-    }
-    let url = this.router.url.split('/')[2];
-    console.log('=========footer', this.router.url);
+    this.router.events
+    .pipe(filter((event: any) => event instanceof NavigationEnd))
+    .subscribe((event: any) => {
+      this.currenturl = this.location.path();
+      this.currenturl = this.currenturl.split('/')[2];
+      // console.log('footer ========= ', this.currenturl);
+    });
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    // this.currenturl = this.location.path().split('/')[2];
-    // if (this.currenturl == 'landing-pg'){
-    //   this.toggle_landing = true;
-    // }
-    console.log('=========footer===========', this.toggle_landing);
-  }
+ 
 
   scrollHeight: number = 0;
   @HostListener('window:scroll', ['$event'])

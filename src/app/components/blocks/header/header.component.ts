@@ -2,9 +2,9 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { GlobalService } from "../../../services/global.service";
 import { WebService } from '../../../services/web.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { Location } from '@angular/common';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,34 +12,35 @@ import { Location } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
   currenturl: any;
-  constructor(private router: Router, public globalService: GlobalService, public webService: WebService, private renderer: Renderer2, 
-    private location: Location) {
-    
-    
+  constructor(private router: Router, public globalService: GlobalService, public webService: WebService, private renderer: Renderer2,
+    private location: Location, private route: ActivatedRoute,) {
   }
   ngOnInit(): void {
-    this.currenturl = this.location.path().split('/')[2];
-    console.log('=========header', this.currenturl);
+    this.router.events
+      .pipe(filter((event: any) => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        this.currenturl = this.location.path();
+        this.currenturl = this.currenturl.split('/')[2];
+        // console.log('========= header', this.currenturl);
+      });
   }
 
-  changeLanguage(language: any){
-    if( this.globalService.activeLanguage != language.short_lable){
+  changeLanguage(language: any) {
+    if (this.globalService.activeLanguage != language.short_lable) {
       this.globalService.showSpinner();
       this.globalService.activeLanguage = language.short_lable;
       this.gotoPage();
     }
   }
 
-  
-  gotoPage(){
+  gotoPage() {
     this.globalService.languages.forEach((language: any, index: number) => {
-      if( language.short_lable == this.globalService.activeLanguage){
+      if (language.short_lable == this.globalService.activeLanguage) {
         var replaceString = this.globalService.currentUrl.split("/")[1];
         var replaceWith = language.short_lable;
         var link = this.globalService.currentUrl.replace(replaceString, replaceWith);
-        console.log(link)
         this.router.navigate([link]);
-        //window.location.reload()
+        console.log(replaceString, replaceWith, link)
       }
     });
   }

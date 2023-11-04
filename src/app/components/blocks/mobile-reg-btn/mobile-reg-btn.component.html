@@ -1,4 +1,4 @@
-<div class="mobile-only">
+<div class="mobile-only" *ngIf="currenturl === 'landing-pg'">
     <div ngbDropdown class="language-switcher">
         <span class="me-2 ms-1" ngbDropdownToggle>{{ globalService.activeLanguageInfo?.lable }} <i class="bi bi-caret-down me-3 "></i></span> 
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -7,3 +7,13 @@
       </div>
     <div class="reg-button" (click)="globalService.gotoRegister()">{{ globalService.languageLabels?.register_your_interest_label }}<i class="bi bi-arrow-right"></i></div>
  </div>
+
+ <div class="mobile-only" *ngIf="currenturl !== 'landing-pg'">
+   <div ngbDropdown class="language-switcher">
+       <span class="me-2 ms-1" ngbDropdownToggle>{{ globalService.activeLanguageInfo?.lable }} <i class="bi bi-caret-down me-3 "></i></span> 
+       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <a class="dropdown-item" ngbDropdownItem *ngFor="let language of globalService.languages; let i = index" [ngClass]="globalService.activeLanguage == language.short_lable ? 'active-language':''" (click)="changeLanguage(language)"><i class="bi bi-check-lg" ></i> {{ language.lable }}</a>
+       </div>
+     </div>
+   <!-- <div class="reg-button" (click)="globalService.gotoRegister()">{{ globalService.languageLabels?.register_your_interest_label }}<i class="bi bi-arrow-right"></i></div> -->
+</div>
