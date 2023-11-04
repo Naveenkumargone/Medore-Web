@@ -1,4 +1,4 @@
-<footer id="footer" class="footer" [ngClass]="globalService.currentUrl == '/404' ? 'd-none':''">
+<footer id="footer" *ngIf="currenturl !== 'landing-pg'" class="footer" [ngClass]="globalService.currentUrl == '/404' ? 'd-none':''">
     <div class="footer-content position-relative">
        <div class="container">
           <div class="row">
@@ -86,5 +86,72 @@
        </div>
     </div>
  </footer>
+ <footer id="footer" class="footer landing-footer" *ngIf="currenturl === 'landing-pg'" [ngClass]="globalService.currentUrl == '/404' ? 'd-none':''">
+   <div class="footer-content position-relative">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4 col-md-3">
+               <div class="footer-info">
+                  <a class="logo d-flex align-items-center" [routerLink]="globalService.activeLanguageInfo.short_lable +'/'">
+                  <img [src]="globalService.S3BucketUrl + globalService.settingsInfo?.footer_logo" alt="Me Do Re Logo" class="img-fluid">
+                  </a>
+               </div>
+            </div>
+            <!-- End footer info column-->
+            <div class="col-lg-4 col-md-4 footer-links">
+               <h2>{{ globalService.languageLabels?.footer_follow_us_on }}</h2>
+                  <ul class="social-link">
+                     <li class="hover_img" *ngIf=" globalService.settingsInfo?.whatsapp_link">
+                        <a href="{{  globalService.settingsInfo?.whatsapp_link  }}" target="_blank"><img class="foot-img non-active" src="assets/media/img/Footer/whatsapp.png"><img class="foot-img active" src="assets/media/img/Footer/whatsapp_active.png"></a>
+                     </li>
+                     <li class="hover_img" *ngIf=" globalService.settingsInfo?.twitter_link">
+                        <a href="{{  globalService.settingsInfo?.twitter_link  }}" target="_blank"><img class="foot-img non-active" src="assets/media/img/Footer/twitter.png"><img class="foot-img active" src="assets/media/img/Footer/twitter_active.png"></a>
+                     </li>
+                     <li class="hover_img" *ngIf=" globalService.settingsInfo?.linked_in_link">
+                        <a href="{{  globalService.settingsInfo?.linked_in_link  }}" target="_blank"><img class="foot-img non-active" src="assets/media/img/Footer/linkedin.png"><img class="foot-img active" src="assets/media/img/Footer/linkedin_active.png"></a>
+                     </li>
+                     <li class="hover_img" *ngIf=" globalService.settingsInfo?.insta_link ">
+                        <a href="{{  globalService.settingsInfo?.insta_link  }}" target="_blank"><img class="foot-img non-active" src="assets/media/img/Footer/insta.png"><img class="foot-img active" src="assets/media/img/Footer/insta_active.png"></a>
+                     </li>
+                     <li class="hover_img" *ngIf=" globalService.settingsInfo?.facebook_link ">
+                        <a href="{{  globalService.settingsInfo?.facebook_link  }}" target="_blank"><img class="foot-img non-active" src="assets/media/img/Footer/facebook.png"><img class="foot-img active" src="assets/media/img/Footer/facebook_active.png"></a>
+                     </li>
+                     <li class="hover_img" *ngIf=" globalService.settingsInfo?.telegram_link">
+                        <a href="{{  globalService.settingsInfo?.telegram_link  }}" target="_blank"><img class="foot-img non-active" src="assets/media/img/Footer/telegram.png"><img class="foot-img active" src="assets/media/img/Footer/telegram_active.png"></a>
+                     </li>
+                  </ul>
+            </div>
+            <!-- End footer links column-->
+            <div class="col-lg-4 col-md-5 footer-links">
+               <h2>{{ globalService.languageLabels?.footer_contact_us_label }}</h2>
+               <ul>
+                  <li class="hover_img" *ngIf="globalService.settingsInfo?.phone">
+                     <span><img class="foot-img non-active" src="assets/media/img/Footer/call.png"><img class="foot-img active" src="assets/media/img/Footer/call_active.png">{{ globalService.languageLabels?.footer_toll_free_label }}: <a *ngFor="let item of globalService.settingsInfo?.phone.split(','); let i = index; let last = last;" href="tel:{{ item }}"> {{ item  }}  {{  last ? '': ' ,' }}</a></span>
+                  </li>
+                  <li class="hover_img">
+                     <a href="mailto:{{ globalService.settingsInfo?.email }}"><img class="foot-img non-active" src="assets/media/img/Footer/email.png"><img class="foot-img active" src="assets/media/img/Footer/email_active.png">{{ globalService.settingsInfo?.email }}</a>
+                  </li>
+                  <li class="hover_img">
+                    <a [routerLink]="globalService.activeLanguageInfo.short_lable +'/aboutus'"><img class="foot-img non-active" src="assets/media/img/Footer/about_us.png"><img class="foot-img active" src="assets/media/img/Footer/about_us_active.png">{{ globalService.languageLabels?.menu_label_about_us }}</a>
+                    </li>
+                 
+               </ul>
+               
+            </div>
+            <!-- End footer links column-->
+         </div>
+      </div>
+   </div>
+   <div class="footer-legal text-center position-relative">
+      <div class="container">
+         <div class="col-12 copyright">
+            <div class="row">
+               <div class="col-6" [ngClass]="globalService.activeLanguage == 'ar' ? 'text-end':'text-start'">© 2023 {{ globalService.languageLabels?.footer_copy_rights_label }}</div>
+               <div class="col-6 cursor-pointer" [ngClass]="globalService.activeLanguage == 'ar' ? 'text-start':'text-end'" [routerLink]="[globalService.activeLanguageInfo.short_lable + '/privacy-policy']">{{ globalService.languageLabels?.footer_privacy_policy_label }}</div> 
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
  <a class="scroll-top d-flex align-items-center justify-content-center" [ngClass]="{'active': scrollHeight > 350}" (click)="gotoTop()"><i class="bi bi-arrow-up"></i></a>
  

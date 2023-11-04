@@ -1,0 +1,83 @@
+.banner-img-section{
+    background-image: linear-gradient(rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)), url(../../../../assets/media/img/banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 900px;
+}
+
+
+.featured-images{
+    width: 100%;
+}
+.featured-images img{
+    width: 100%;
+}
+.featured-main{
+    background-color: #EBEBEB;
+    padding: 60px 0;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+.make-ur-dream-section{
+    background-image: linear-gradient(rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)), url(https://medore-assets.s3.us-east-1.amazonaws.com/assets/media/image/banners/tower/rNF8u7oTYZuUmZ2pwQX3EFk8IFkyLt41Pm4RdOvW.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+}
+.icons-boxes img{
+    width: 50px;
+    height: 50px;
+}
+.icons-box-sec{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    
+}
+.ovarlay-box{
+    width: 915px;
+    background-color: #0006;
+    padding: 40px;
+}
+@media(max-width:768px){
+    .featured-main{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .banner-img-section{
+        padding: 65px 30px;
+    }
+}
+ @media(max-width:991px){
+    .ovarlay-box{
+        width: 100%;
+    }
+    .make-ur-dream-section{
+        height: auto;
+        padding: 80px;
+    }
+
+ }
+ @media(max-width:600px){
+    .icons-box-sec{
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+    }
+    .make-ur-dream-section{
+        padding: 30px;
+    }
+    .featured-main{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+ }
+ @media(max-width:460px){
+    /* .banner-img-section{
+        height: 1000px;
+    } */
+ }
