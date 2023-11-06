@@ -36,28 +36,28 @@
                   </div>
                   <div class="col-12">
                      <div class="row">
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-6 mb-4">
                            <label>
                               <input class="check" type="radio" value="Studio"
                               formControlName="interest" [(ngModel)]="formData.interest">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_studio}}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-6 mb-4">
                            <label>
                               <input class="check" id="Bedroom1" type="radio" value="1 Bedroom"
                                  formControlName="interest" [(ngModel)]="formData.interest">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_1_bedroom}}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-6 mb-4">
                            <label>
                               <input class="check" id="Bedroom2" type="radio" value="2 Bedroom"
                                  formControlName="interest" [(ngModel)]="formData.interest">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_2_bedroom}}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-6 mb-4">
                            <label>
                               <input class="check" id="Bedroom3" type="radio" value="3 Bedroom"
                                  formControlName="interest" [(ngModel)]="formData.interest">
@@ -77,22 +77,22 @@
                            *ngIf="interestForm.controls['iama'].invalid && formSubmitted">{{ globalService.languageLabels?.register_form_field_iama_error_msg }}</small>
                            {{globalService.languageLabels?.register_form_field_i_am_a_label}}
                      </div>
-                     <div class="row">
-                        <div class="col-4 mb-4">
+                     <div class="row flex-wrap">
+                        <div class="col-sm-4 mb-4">
                            <label>
                               <input class="check" type="radio" value="Broker" id="Broker"
                               formControlName="iama" [(ngModel)]="formData.iama">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_broker}}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-4 mb-4">
                            <label>
                               <input class="check" id="Buyer" type="radio" value="Investor"
                                  formControlName="iama" [(ngModel)]="formData.iama">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_investor }}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-4 mb-4">
                            <label>
                               <input class="check" id="Buyer" type="radio" value="End User"
                                  formControlName="iama" [(ngModel)]="formData.iama">
@@ -151,28 +151,28 @@
                   </div>
                   <div class="col-12">
                      <div class="row">
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-6 mb-4">
                            <label>
                               <input class="check" type="radio" value="Studio"
                               formControlName="interest" [(ngModel)]="formData.interest">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_studio}}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-6 mb-4">
                            <label>
                               <input class="check" id="Bedroom1" type="radio" value="1 Bedroom"
                                  formControlName="interest" [(ngModel)]="formData.interest">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_1_bedroom}}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-6 mb-4">
                            <label>
                               <input class="check" id="Bedroom2" type="radio" value="2 Bedroom"
                                  formControlName="interest" [(ngModel)]="formData.interest">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_2_bedroom}}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-6 mb-4">
                            <label>
                               <input class="check" id="Bedroom3" type="radio" value="3 Bedroom"
                                  formControlName="interest" [(ngModel)]="formData.interest">
@@ -192,22 +192,22 @@
                            *ngIf="interestForm.controls['iama'].invalid && formSubmitted">{{ globalService.languageLabels?.register_form_field_iama_error_msg }}</small>
                            {{globalService.languageLabels?.register_form_field_i_am_a_label}}
                      </div>
-                     <div class="row">
-                        <div class="col-4 mb-4">
+                     <div class="row flex-wrap">
+                        <div class="col-sm-4 mb-4">
                            <label>
                               <input class="check" type="radio" value="Broker" id="Broker"
                               formControlName="iama" [(ngModel)]="formData.iama">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_broker}}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-4 mb-4">
                            <label>
                               <input class="check" id="Buyer" type="radio" value="Investor"
                                  formControlName="iama" [(ngModel)]="formData.iama">
                               <span>{{globalService.languageLabels?.register_form_field_checkbox_value_investor }}</span>
                            </label>
                         </div>
-                        <div class="col-4 mb-4">
+                        <div class="col-sm-4 mb-4">
                            <label>
                               <input class="check" id="Buyer" type="radio" value="End User"
                                  formControlName="iama" [(ngModel)]="formData.iama">
