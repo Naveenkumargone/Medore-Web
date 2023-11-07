@@ -51,6 +51,7 @@
     }
     .banner-img-section{
         padding: 65px 30px;
+        height: auto;
     }
 }
  @media(max-width:991px){
